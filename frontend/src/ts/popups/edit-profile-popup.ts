@@ -70,7 +70,7 @@ const websiteInput = $("#editProfilePopup .website");
 const badgeIdsSelect = $("#editProfilePopup .badgeSelectionContainer");
 
 let currentSelectedBadgeId = -1;
-let currentSelectedLeaderBoardTheme = "";
+let currentSelectedLeaderBoardTheme: string | undefined;
 
 function hydrateInputs(): void {
   const snapshot = DB.getSnapshot();
@@ -206,13 +206,13 @@ const leaderboardThemeSelector = new SlimSelect({
   },
   events: {
     afterChange: (newVal): void => {
-      const selected = newVal[0]?.value as string;
-      currentSelectedLeaderBoardTheme = selected;
+      const selected = newVal[0]?.value;
+      currentSelectedLeaderBoardTheme = selected !== "" ? selected : undefined;
     },
   },
 });
 export async function init(current?: string): Promise<void> {
-  currentSelectedLeaderBoardTheme = current ?? "";
+  currentSelectedLeaderBoardTheme = current;
   const data = (await getSortedThemesList()).map(
     (it) =>
       ({
