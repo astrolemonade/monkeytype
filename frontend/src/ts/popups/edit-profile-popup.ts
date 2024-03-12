@@ -23,7 +23,6 @@ export function show(callbackOnHide: () => void): void {
   Skeleton.append(wrapperId, "popups");
 
   const isPremium = DB.getSnapshot()?.isPremium;
-  console.log("######", isPremium);
   if (isPremium) {
     $("#editProfilePopup .leaderboardTheme").removeClass("hidden");
   } else {
