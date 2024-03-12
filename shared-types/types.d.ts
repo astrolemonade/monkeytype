@@ -495,6 +495,7 @@ declare namespace SharedTypes {
   type PremiumInfo = {
     startTimestamp: number;
     expirationTimestamp: number;
+    leaderboardTheme?: string;
   };
 
   type UserQuoteRatings = Record<string, Record<string, number>>;
@@ -503,7 +504,6 @@ declare namespace SharedTypes {
 
   type UserInventory = {
     badges: Badge[];
-    leaderboardTheme?: string;
   };
 
   type Badge = {

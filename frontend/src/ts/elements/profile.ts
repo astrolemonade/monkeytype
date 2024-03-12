@@ -412,7 +412,7 @@ export function updateNameFontSize(where: ProfileViewPaths): void {
 $(".details .editProfileButton").on("click", async () => {
   const snapshot = DB.getSnapshot();
   if (!snapshot) return;
-  await EditProfilePopup.init(snapshot.inventory?.leaderboardTheme);
+  await EditProfilePopup.init(snapshot.premium?.leaderboardTheme);
   EditProfilePopup.show(() => {
     void update("account", snapshot);
   });

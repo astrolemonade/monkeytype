@@ -22,6 +22,14 @@ export function show(callbackOnHide: () => void): void {
   }
   Skeleton.append(wrapperId, "popups");
 
+  const isPremium = DB.getSnapshot()?.isPremium;
+  console.log("######", isPremium);
+  if (isPremium) {
+    $("#editProfilePopup .leaderboardTheme").removeClass("hidden");
+  } else {
+    $("#editProfilePopup .leaderboardTheme").addClass("hidden");
+  }
+
   if (!isPopupVisible(wrapperId)) {
     callbackFuncOnHide = callbackOnHide;
 
@@ -182,8 +190,8 @@ async function updateProfile(): Promise<void> {
       delete badge.selected;
     }
   });
-  if (snapshot.inventory !== undefined) {
-    snapshot.inventory.leaderboardTheme = currentSelectedLeaderBoardTheme;
+  if (snapshot.premium !== undefined) {
+    snapshot.premium.leaderboardTheme = currentSelectedLeaderBoardTheme;
   }
 
   Notifications.add("Profile updated", 1);
@@ -227,7 +235,6 @@ export async function init(current?: string): Promise<void> {
   );
 
   data.unshift({ text: "none", value: "" });
-
   leaderboardThemeSelector.setData(data);
 }
 
