@@ -1,8 +1,8 @@
-<div id="registerCaptchaPopupWrapper" class="popupWrapper hidden">
-  <div id="registerCaptchaPopup">
+<dialog id="registerCaptchaModal" class="modalWrapper hidden">
+  <div class="modal">
     <div class="g-recaptcha"></div>
   </div>
-</div>
+</dialog>
 
 <dialog id="alertsPopup" class="modalWrapper hidden">
   <div class="modal">
@@ -59,10 +59,7 @@
   <div id="simplePopup" popupId=""></div>
 </div>
 
-<dialog
-  id="cookiePopup"
-  class="cookie-popup-wrapper cookiePopupWrapper modalWrapper hidden"
->
+<dialog id="cookiesModal" class="modalWrapper hidden">
   <div class="extensionMessage">
     If you see this text, that means an extension is blocking a cookie consent
     popup. This will cause the website to incorrectly assume its still visible
@@ -362,19 +359,19 @@
   </div>
 </div>
 
-<dialog id="settingsImportPopup" class="modalWrapper hidden">
+<dialog id="importExportSettingsModal" class="modalWrapper hidden">
   <form class="modal" data-mode="">
     <input type="text" title="import settings" />
     <button>import settings</button>
   </form>
 </dialog>
 
-<div id="customThemeShareWrapper" class="popupWrapper hidden">
-  <div id="customThemeShare" action="">
+<dialog id="shareCustomThemeUrlModal" class="modalWrapper hidden">
+  <div class="modal">
     <input type="text" title="custom theme" />
     <div class="button">ok</div>
   </div>
-</div>
+</dialog>
 <div id="customTextPopupWrapper" class="popupWrapper hidden">
   <div id="customTextPopup" action="">
     <div class="buttonsTop">
@@ -951,9 +948,9 @@
     </div>
   </div>
 </div>
-<div id="versionHistoryWrapper" class="popupWrapper hidden">
-  <div id="versionHistory"></div>
-</div>
+<dialog id="versionHistoryModal" class="modalWrapper hidden">
+  <div class="modal"></div>
+</dialog>
 <dialog id="supportModal" class="modalWrapper hidden">
   <div class="modal">
     <div class="title">Support Monkeytype</div>
